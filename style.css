@@ -34,7 +34,7 @@ h1 {
        
 } 
 
-.converter select {
+.converter select, .converter input {
     background: url('arrow-down.png') no-repeat right center;
     background-size: 10px;
 }
@@ -44,6 +44,10 @@ h1 {
     box-shadow: 0 0 5px rgba(0,123,255,0.5);
 }
 
+.converter input:hover, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
 
 .converter input {
     width: 94%;
