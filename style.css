@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
 }
 h1 {
     text-align: center;
@@ -13,7 +13,7 @@ h1 {
     background: white;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    
 }
 .converter label {
     display: block;
@@ -25,7 +25,7 @@ h1 {
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
-        background-color: #f0f0f0;
+        background-color: #ffffff;
         border: 1px solid #ccc;
         border-radius: 2px;
         padding: 10px;
@@ -68,6 +68,13 @@ h1 {
 }
 .converter button:hover {
     background-color: #0056b3;
+}
+.converter:focus-within {
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+body:focus-within{
+    background-color: transparent;
 }
 .result {
     text-align: center;
