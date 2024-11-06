@@ -34,6 +34,10 @@ h1 {
        
 } 
 
+.outputUnit .inputUnit .category {
+    border-radius: 5px;
+}
+
 .converter select, .converter input {
     background: url('arrow-down.png') no-repeat right center;
     background-size: 10px;
