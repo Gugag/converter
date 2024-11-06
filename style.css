@@ -27,7 +27,7 @@ h1 {
         -moz-appearance: none;
         background-color: #ffffff;
         border: 1px solid #ccc;
-        border-radius: 2px;
+        border-radius: 5px;
         padding: 10px;
         font-size: 12px;
         width: 100%;
@@ -36,11 +36,6 @@ h1 {
 
 .outputUnit .inputUnit .category {
     border-radius: 5px;
-}
-
-.converter select, .converter input {
-    background: url('arrow-down.png') no-repeat right center;
-    background-size: 10px;
 }
 
 .converter select:hover, select:focus {
