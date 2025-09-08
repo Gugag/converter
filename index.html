@@ -1,47 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Free Unit Converter"> 
-    <meta property="og:description" content="Free Unit Converter, use Without Registration" > 
-    <meta property="og:image" content="https://i.ibb.co/zHN26wR/resized-image-4.png"> 
-    <meta property="og:url"content="https://itdata.ge"> 
-    <title>Unit Converter</title>
-    <script src="scrips.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon1.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <meta name="description" content="Free Unit Converter — length, temperature, area, volume, weight, and time. No login." />
+  <meta property="og:title" content="Unit Converter" />
+  <meta property="og:description" content="Free Unit Converter — use without registration." />
+  <meta property="og:image" content="https://i.ibb.co/zHN26wR/resized-image-4.png" />
+  <meta property="og:url" content="https://itdata.ge" />
+  <title>Unit Converter</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Unit Converter</h1>
-    <div class="converter">
-        <label for="category">Select Category:</label>
-        <select id="category" onchange="populateUnits()">
-            <option value="">Select Category</option>
-            <option value="length">Length</option>
-            <option value="temperature">Temperature</option>
-            <option value="area">Area</option>
-            <option value="volume">Volume</option>
-            <option value="weight">Weight</option>
-            <option value="time">Time</option>
-        </select>
-        
-        <label for="inputUnit">From Unit:</label>
-        <select id="inputUnit">
-            <option value="">Select Unit</option>
-        </select>
-
-        <label for="outputUnit">To Unit:</label>
-        <select id="outputUnit">
-            <option value="">Select Unit</option>
-        </select>
-
-        <label for="inputValue">Enter Value:</label>
-        <input  id="inputValue" placeholder="Enter value">
-
-        <button onclick="convert()">Convert</button>
-
-        <div class="result" id="result"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1>Unit Converter</h1>
+      <div class="header-actions">
+        <button id="themeToggle" class="ghost" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+      </div>
     </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="grid three">
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" aria-label="Select conversion category"></select>
+          <div class="muted small">Length, Temperature, Area, Volume, Weight, Time</div>
+        </div>
+
+        <div class="form-group">
+          <label for="fromUnit">From</label>
+          <div class="hstack">
+            <select id="fromUnit"></select>
+            <button id="swapBtn" class="ghost" title="Swap units" aria-label="Swap units">⇄</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="toUnit">To</label>
+          <select id="toUnit"></select>
+        </div>
+      </div>
+
+      <div class="grid two">
+        <div class="form-group">
+          <label for="value">Value</label>
+          <input id="value" type="number" inputmode="decimal" placeholder="Enter value" />
+        </div>
+        <div class="form-group">
+          <label for="precision">Precision</label>
+          <div class="hstack">
+            <input id="precision" type="range" min="0" max="8" step="1" value="4" />
+            <output id="precisionOut" for="precision">4 decimals</output>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button id="convertBtn" class="primary">Convert</button>
+        <button id="copyBtn" class="ghost" disabled>Copy result</button>
+        <button id="resetBtn" class="ghost">Reset</button>
+        <button id="saveBtn" class="ghost">Save</button>
+      </div>
+      <p class="muted small">Saved selections are stored locally in this browser. Press Ctrl/⌘+Enter to convert.</p>
+    </section>
+
+    <section class="card">
+      <h2>Result</h2>
+      <div id="result" class="result-box" aria-live="polite">—</div>
+      <div id="formula" class="muted small hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>Quick Table</h2>
+      <div id="tableWrap" class="table-wrap muted small">Pick a category and enter a value to see top conversions.</div>
+    </section>
+
+    <section class="ad card">
+      <div class="ad-box">
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-1234552946070834"
+             data-ad-slot="3273843323"></ins>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container muted small">
+    <p>Conversions use standard factors. Months/years are approximate averages.</p>
+  </footer>
+
+  <script src="scrips.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234552946070834" crossorigin="anonymous"></script>
+  <script>window.addEventListener('load',()=>{(adsbygoogle=window.adsbygoogle||[]).push({});});</script>
 </body>
 </html>
